@@ -1,0 +1,44 @@
+/* A regra @media tem um recurso de mídia chamado prefers-reduced-motion para definir o CSS com base nas preferências 
+   do usuário. Ele pode receber um destes valores:
+   1º reduce
+   2º no-preference */
+@media screen {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    ol {
+        font-size: 50px;
+    }
+}
+
+
+@keyframes wheel {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+ }
+ 
+ @keyframes cabins {
+   0% {
+     transform: rotate(0deg);
+   }
+   25% {
+     background-color: yellow;
+   }
+   50% {
+     background-color: purple;
+   }
+ 
+   75% {
+     background-color: yellow;
+   }
+   100% {
+     transform: rotate(-360deg);
+   }
+ }

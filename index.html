@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Media_and_Animations.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+
+    <meta charset="UTF-8">
+    <title>Comandos para Relembrar</title>
+</head>
+
+<!-- Sol de fundo -->
+<body class="bola">
+
+    <!-- Quanto menor o numero, maior o seu texto ( e importancia?) -->
+    <h1 class="sdf">info</h1>
+    <h2>info2</h2>
+    <h3>info3</h3>
+
+    <!-- Paragrafo -->
+    <p>teste</p>
+    <p>teste2</p>
+    <p>teste3</p>
+
+    <!-- MAIN serve para identificar diferentes áreas de conteúdo -->
+    <main>
+        <img 
+            src="salabim.jpg" 
+            alt="algum texto que aparece caso a imagem n apareca">
+        <a 
+            href="#algum link aq"
+            target="_blank">_blank abre o link em uma nova aba</a>
+
+        <!-- SECTION ajuda a separar conteudo -->
+        <section role="region" aria-labelledby="lista n ordened">
+
+            <!-- UL é lista n ordenada, fica um pontinho ° -->
+            <ul>lista n ordened
+                <li>abc</li>
+                <li>def</li>
+                <li>ghi</li>
+            </ul>
+
+            <!-- OL é lista ordenada, fica uns numeros 1. 2. 3... -->
+            <ol>lista ordened
+                <li>abc</li>
+                <li name="hayd">def</li>
+                <li>ghi</li>
+            </ol>
+
+            <!-- FIGURE representa um conteúdo auto-contido e permitirá que você associe uma imagem com uma legenda. -->
+            <figure>
+                <img 
+                    src="sim.jpg"
+                    alt="n sei">
+
+                <!-- Adiciona uma legenda na img -->
+                <!-- EM deixa em italico -->
+                <!-- STRONG deixa em negrito -->
+                <figcaption><strong>sumiu</strong> <em>mano</em></figcaption>
+            </figure>
+
+            <!-- FORM faz um formulario =O -->
+            <!-- ACTION indica para onde os dados do formulário devem ser enviados -->
+            <!-- O atributo METHOD especifica como enviar dados de formulário para o URL especificado no atributo action. 
+                 Os dados do formulário podem ser enviados através de uma solicitação GET como parâmetros de 
+                 URL (com method="get") ou através de uma solicitação POST como dados no corpo da solicitação 
+                 (com method="post"). -->
+            <form action="https://register-demo.freecodecamp.org" method="post">
+
+                <!-- FIELDSET é usado para agrupar entradas (inputs) e rótulos (labels) relacionados em um formulário 
+                     da web. Os elementos fieldset são elementos de nível de bloco, o que significa que eles aparecem 
+                     em uma nova linha. -->
+                <fieldset>
+
+                        <!-- legend atua como uma legenda para o conteúdo do elemento fieldset. Ele dá aos usuários um 
+                             contexto sobre o que devem inserir nessa parte do formulário. -->
+                        <legend>Oiaaa</legend>
+
+                    <!-- INPUT permite de várias maneiras coletar dados a partir de um formulário da web -->
+                    <!-- Existem muitos tipos de entradas (inputs) que você pode criar usando o atributo type -->
+                    <!-- Para que os dados de um formulário sejam acessados pelo local especificado no atributo action, 
+                         você deve dar ao campo de texto um atributo name e atribuir a ele um valor que represente os 
+                         dados que estão sendo enviados -->
+                    <!-- PLACEHOLDER é usado para dar às pessoas uma dica sobre o tipo de informação que deve ser inserido 
+                         em uma entrada (input). -->
+                    <!-- Para evitar que um usuário envie o formulário quando as informações necessárias estiverem faltando, 
+                         você precisa adicionar o atributo REQUIRED a um elemento input. -->
+                    <input type="email" name="email" id="email" placeholder="sua senha aq, confia..." required>
+
+                    <!-- BUTTON cria um elemento clicável -->
+                    <!-- O comportamento padrão de clicar em um botão de formulário sem qualquer atributo envia o formulário 
+                         para o local especificado no atributo action. -->
+                    <button type="submit" name="enviar">eu confio !</button>
+
+                    <!-- LABEL é usados para ajudar a associar o texto de um elemento input com o próprio elemento 
+                         input (especialmente para tecnologias assistivas como leitores de tela). -->
+                    <label for="password">
+                        <!-- o atributo PATTERN defini uma expressão regular que a senha deve corresponder 
+                             para ser considerada válida. -->
+                        <input type="password" name="password" id="password" pattern="[a-z0-5]{8,}" required>
+                    </label>
+
+                    <!-- Colocar o mesmo nome no input => type => radio, faz com que só se pode marcar 1 -->
+                    <!-- Se você selecionar o botão de radio e enviar o formulário, os dados de formulário para 
+                         o botão são baseados em seus atributos name e value -->
+                    <label>
+                        <input id="escolhe 1" type="radio" name="só1" value="5"> sou o 1
+                    </label>
+                    <label>
+                        <input id="escolhe 2" type="radio" name="só1" value="89475441545"> sou o 2
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <main>
+        <!-- ARTICLE comumente contêm vários elementos que possuem informações relacionadas. -->
+        <article>
+            <p>começo e</p>
+
+            <!-- HR farão com que apareça como uma linha cinza claro fina. -->
+            <hr>
+            <p>Fim</p>            
+        </article>
+
+        <div class="marker divnumUm">
+            <div class="cap"></div>
+            <div class="sleeve"></div>
+        </div>
+        <div class="marker divnumDois">
+            <div class="cap"></div>
+            <div class="sleeve"></div>
+        </div>
+        <div class="marker divnumTres">
+            <div class="cap"></div>
+            <div class="sleeve"></div>
+        </div>
+
+        <!-- TEXTAREA age como um elemento input do tipo text, mas vem com o benefício adicional de poder receber 
+             texto em várias linhas e um número inicial de linhas e colunas. -->
+        <label for="textarea">Escreva !
+            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+        </label>
+             
+        <label for="options">olha a ultima opção
+            <select name="options" id="option1">
+                <option class="opcao" value="">SP</option>
+                <option class="opcao" value="1">BH</option>
+                <option class="opcao" value="2">MT</option>
+                <option class="opcao" value="3">PR</option>
+                <option class="opcao" value="4">TC</option>
+            </select>
+            <input type="date" name="date" id="date">
+        </label>        
+    </main>
+
+    <main>
+        <header class="header">
+            <h1>css flexbox photo gallery</h1>
+        </header>
+        <div class="gallery">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg">
+        </div>
+        <hr>
+
+        <article class="tipos4">1 tipos</article>
+        <article class="tipos">2 tipos</article>
+        <article class="tipos">3 tipos</article>
+        <article class="tipos4">4 tipos</article>
+        <article class="tipos">5 tipos</article>
+
+        <br>
+        <label id="labelDeSpan" for="sr only">sr only fica verde<br>
+            <span class="sr-only">sr-only |</span>
+            <span class="sr-only texte">sr-only texte |</span>
+            <span class="sr-onlychama">sr-onlychama |</span>
+            <span class="foi sr-only">foi sr-only |</span>
+            <span class="sronly">sronly |</span>
+            <span class="sr only">sr only</span>
+        </label>
+    </main>
+
+    <main class="semnomes">
+        
+        <section>
+            <h1>display Grid</h1>
+            <p class="first-paragraph">
+                Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding 
+                challenges, you'll learn through building projects - step by step. Before we get into the details, let 
+                me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 
+                required projects. We are only changing the optional coding challenges.
+            </p>
+            <p>
+                After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on 
+                the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This 
+                is what makes time travel possible: the flux capacitor!
+            </p>
+            <p>
+                It wasn't as dramatic as Doc's revelation in Back to the Future. It just occurred to me while I was going 
+                for a run. The revelation: the entire curriculum should be a series of projects. Instead of individual 
+                coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives 
+                you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
+            </p>
+            <div class="social icons">
+                <a href="https://instagram.com/freecodecamp">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://instagram.com/freecodecamp">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                    <a href="https://instagram.com/freecodecamp">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://instagram.com/freecodecamp">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://instagram.com/freecodecamp">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://instagram.com/freecodecamp">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+        </section>
+    </main>
+
+    <main>
+        <label for="whell">Roda Gigante animada</label>
+        <div class="wheel">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+
+            <div class="cabin"></div>
+            <div class="cabin"></div>
+            <div class="cabin"></div>
+            <div class="cabin"></div>
+            <div class="cabin"></div>
+            <div class="cabin"></div>
+        </div>
+    </main>
+
+    <!-- FOOTER é uma seção de rodapé à página. -->
+    <footer>
+        
+    </footer>
+</body>
+</html>

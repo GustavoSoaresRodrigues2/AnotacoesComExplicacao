@@ -1,0 +1,411 @@
+/* Existem dois modelos de cores: o modelo aditivo RGB (vermelho, verde, azul), usado em dispositivos eletrônicos, 
+   e o modelo subtrativo CMYK (ciano, magenta, amarelo, preto), usado em impressão. */
+
+/* z-index serve para priorizar um elemento, quanto maior, mais na frente */
+
+/* As variáveis são frequentemente declaradas no seletor :root. Esse é o seletor de nível mais alto no CSS; colocar 
+   as variáveis lá as tornará utilizáveis em todos os lugares. */
+:root {
+    --Tipo-Cor: #aa80ff;
+}
+
+* {
+    /* Normaliza o modelo de caixa */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sdf {
+    /* Coloar uma imagem de fundo usando => url() */
+    background: url(sim.jpg);
+
+    color: white;
+
+    /* Evita distanciamento em excesso. */
+    max-width: 1000px;
+}
+
+/* :HOVER muda as propriedades de um link quando o mouse passa sobre ele */
+a:hover {
+    color: red;
+}
+
+/* ACTIVE muda as propriedades de um link quando o link tiver sido clicado de fato */
+a:active {
+    color: aqua;
+}
+
+/* VISITED muda as propriedades de um link quando o link tenha sido visitado de fato */
+a:visited {
+    color: yellow;
+}
+
+.marker {
+    width: 200px;
+    height: 25px;
+    margin: 10px auto;
+}
+
+.sleeve {
+    width: 110px;
+    height: 25px;
+
+ /* Opacidade descreve a quantidade de transparência de um elemento. Por exemplo, um muro sólido é opaco, e nenhuma 
+    luz pode passar. Mas um copo de bebida é muito mais transparente e pode ver-se através do copo o outro lado. 
+    Com a propriedade do CSS opacity, você pode controlar como um elemento é opaco ou transparente. Com o valor 0, 
+    ou 0%, o elemento será completamente transparente e 1.0, ou 100%, o elemento será completamente opaco, como é 
+    por padrão. */
+    /* opacity: 0.5; */
+
+ /* Para adicionar um canal alfa a uma cor rgb, use a função rgba.
+    A função rgba age como a função rgb, mas recebe mais um número de 0 a 1.0 para o canal alfa:
+    Ex: rgba(redValue, greenValue, blueValue, alphaValue);
+    Você também pode usar um canal alfa às cores com hsl e hex. */
+    background-color: rgba(255, 255, 255, 0.5);
+
+ /* A propriedade abreviada BORDER permite que você defina a largura da borda esquerda, o estilo e a cor ao 
+    mesmo tempo.
+    Ex: border: width style color; */
+    border-left: 10px double black;
+}
+
+.cap {
+    width: 60px;
+    height: 25px;
+}
+
+.cap, .sleeve {
+    display: inline-block;
+}
+  
+
+.divnumUm {
+ /* Um gradiente é quando uma cor muda para outra. A função CSS linear-gradient permite que você controle a direção 
+    da transição ao longo de uma linha e quais cores são usadas.
+    Uma coisa a lembrar é que a função linear-gradient realmente cria um elemento image e que ela geralmente é 
+    pareada com a propriedade background que pode aceitar uma imagem como um valor.
+    Ex: linear-gradient(gradientDirection, color1, color2, ...);
+
+    gradientDirection é a direção da linha usada para a transição. color1 e color2 são argumentos de cor, que são 
+    as cores que serão usadas na transição em si. Elas podem ser de qualquer tipo de cor, incluindo palavras-chave 
+    de cores, hex, rgb, ou hsl. 
+
+    Color-stops permitem que você ajuste onde as cores são colocadas ao longo da linha gradiente. São uma unidade de 
+    comprimento como px ou porcentagens que seguem uma cor na função linear-gradient. 
+    Ex: linear-gradient(90deg, red 90%, black); 
+    
+    repeating-linear-gradient vai ficar repetindo o mesmo gradiente. */
+    
+    /* background: linear-gradient(
+    90deg, 
+    rgb(255, 0, 0), 
+    rgb(0, 255, 0), 
+    rgb(0, 0, 255)
+    ); */
+    background: linear-gradient(
+        #55680D, 
+        #71F53E, 
+        #116C31
+    );
+
+ /* A propriedade box-shadow aplica uma ou mais sombras a um elemento.
+    box-shadow: offsetX offsetY blurRadius color;
+
+    Se um valor para blurRadius não estiver incluído, o padrão é 0 e produz arestas com pontas. Quanto maior o 
+    valor de blurRadius, maior será o efeito de desfoque.
+    
+    1º Tanto offsetX como offsetY aceitam valores numéricos em px e em outras unidades do CSS.
+    2º Um valor positivo de offsetX move a sombra para a direita e um valor negativo a move para a esquerda.
+    3º Um valor positivo de offsetY move a sombra para baixo e um valor negativo a move para cima.
+    4º Se você quer um valor de zero (0) para offsetX, offsetY ou para os dois, você não precisa adicionar uma unidade, 
+    todos os navegadores entendem que zero significa que não há alterações. 
+    
+    A altura e largura da sombra são determinadas pela altura e largura do elemento ao qual ela se aplica. 
+    Você também pode usar um valor opcional de spreadRadius para espalhar o alcance da sombra. */
+    box-shadow: 0 0 20px 0 #3B7E20CC;
+}
+
+.divnumDois {
+    background: linear-gradient(
+        rgb(122, 74, 14), 
+        rgb(245, 62, 113), 
+        rgb(162, 27, 27)
+    );
+    box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+.divnumTres {
+ /* O modelo de cores de HSL, ou matiz, saturação e luz, é outra forma de representar cores.
+    A função do CSS hsl aceita 3 valores: um número de 0 a 360 para o matiz, uma porcentagem de 0 a 100 para 
+    saturação e uma porcentagem de 0 a 100 para a luz.
+    Se você imaginar um circulo cromático, a cor vermelha fica a 0 graus, verde é a 120 graus e azul está a 240 graus.
+    Saturação é a intensidade de uma cor de 0%, ou cinza, até 100% para cor pura.
+    A luz é o nível de brilho no qual uma cor aparece, de 0%, ou preta completa, até 100%, branco total, 
+    com 50% de neutralidade. */
+    background: linear-gradient(
+        hsl(186, 76%, 16%), 
+        hsl(223, 90%, 60%), 
+        hsl(240, 56%, 42%)
+    );
+    box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8)
+}
+
+/* Você pode selecionar o último elemento de um tipo específico usando a pseudo-classe last-of-type do CSS */
+.opcao:last-of-type {
+    color: red;
+    font-size: 20px;
+}
+
+/* Tambem pode usar um seletor de atributo, que seleciona um elemento com base no valor dado. 
+   Ex: input[name="password"] */
+input[type="date"] {
+    color: red;
+}
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 15px;
+    padding: 30px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+}
+
+.gallery {
+ /* FLEXBOX tem um eixo principal e um eixo cruzado. O eixo principal é definido pela propriedade flex-direction, 
+    que tem quatro valores possíveis: 
+   
+    1º row (padrão): eixo horizontal com os itens flex items da esquerda para a direita
+    2º row-reverse: eixo horizontal com os itens flex da direita para a esquerda
+    3º column: eixo vertical com os itens flex de cima para baixo
+    4º column-reverse: eixo vertical com os itens flex de baixo para cima
+
+    Observação: os eixos e direções serão diferentes, dependendo da direção do texto.*/
+ /* A propriedade flex-wrap determina como os itens flex se comportam quando o contêiner flex for muito pequeno. 
+    Defini-la como wrap permitirá que os itens sejam associados à próxima linha ou coluna. nowrap (padrão) impedirá 
+    que os itens sejam associados ou que encolham, se necessário. */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+
+ /* A propriedade abreviada gap do CSS define as lacunas (gaps), também conhecidas como calhas, entre as linhas e as 
+    colunas. A propriedade gap e suas subpropriedades row-gap e column-gap fornecem essa funcionalidade para layouts 
+    flex, grid e multicolunas. */
+    gap: 16px;
+}
+
+/* O pseudoelemento ::after cria um elemento que é o último filho do elemento selecionado. */
+.gallery::after {
+    content: "";
+    width: 350px;
+}
+  
+.gallery img {
+    max-width: 350px;
+    width: 100%;
+    height: 300px;
+
+ /* Observe como algumas de suas imagens ficaram distorcidas. Isto ocorre porque as imagens têm proporções diferentes. 
+    Em vez de definir cada proporção individualmente, você pode usar a propriedade object-fit para determinar como as 
+    imagens devem se comportar.
+    A propriedade OBJECT-FIT com o valor cover informará a imagem que ela deve preencher o contêiner img enquanto 
+    mantém a proporção, resultando em um corte para o ajuste. */
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+/* O pseudosseletor :not pode ser usado para selecionar todos os elementos que não correspondem à determinada regra 
+   do CSS.
+   O pseudosseletor :not() é usado para direcionar todos os elementos que não coincidem com o seletor */
+article:not(.tipos) {
+    background-color: crimson;
+}
+
+/* O seletor span[class~="sr-only"] selecionará qualquer elemento span cujo atributo class inclua sr-only. */
+span[class~="sr-only"] {
+    color: rgb(2, 209, 36);
+    position: relative;
+}
+
+/* O pseudosseletor :first-of-type é utilizado para focar no primeiro elemento que corresponde ao seletor. */
+span:first-of-type {
+    background-color: rgb(0, 57, 95);
+}
+
+/* A sintaxe span[class] terá como destino qualquer elemento span que tenha um atributo class definido, 
+   independentemente do valor do atributo. */
+/* Ao invés de ter que verificar constantemente se você não está substituindo as propriedades anteriores, você pode usar 
+   a palavra-chave !important para garantir que essas propriedades sejam sempre aplicadas, independentemente da ordem ou 
+   da especificidade. */
+#labelDeSpan span[class] {
+    font-size: 30px !important;
+}
+
+/* O seletor [attribute="value"] visa qualquer elemento que tenha um atributo com um valor específico. */
+span[class="sronly"] {
+    border: 2px solid #71F53E;
+}
+
+/* O pseudosseletor :nth-of-type() é usado para focar em elementos específicos com base em sua ordem entre irmãos 
+   do mesmo tipo. */
+span:nth-of-type(6) {
+    background-color: #46467a;
+}
+
+.bola {
+    background: radial-gradient(
+        circle closest-corner at 80% 8%,
+        #ffcf33,
+        #ffcf33 20%,
+        #ffff66 21%,
+        #bbeeff 100%
+    );
+}
+
+.semnomes {
+
+ /* O CSS Grid oferece um layout baseado em uma grade bidimensional, permitindo que você centralize itens horizontalmente 
+    e verticalmente enquanto ainda mantém o controle para fazer coisas como sobrepor elementos. 
+    CSS Grid é similar ao Flexbox, na medida em que possui uma propriedade especial para os elementos pai quanto para 
+    os elementos filhos.
+    Para ter um layout de três colunas, adicione a propriedade grid-template-columns com o valor de 1fr 94rem 1fr. 
+    Isso criará três colunas onde a coluna do meio tem 94rem de largura e as primeiras e últimas colunas são ambas 
+    1 fração do espaço restante no contêiner da grade. 
+    A propriedade grid-column informa ao item de grade em qual linha de grade começar e terminar. 
+    
+    Para o CSS Grid criarão linhas adicionais, conforme necessário, ao contrário do Flexbox.
+    A propriedade grid-template-columns definida como repeat(5, 1fr) organiza os elementos em uma única linha. 
+    
+    Se você quiser adicionar mais ícones sociais, mas mantê-los na mesma linha, você precisa atualizar 
+    grid-template-columns para criar colunas adicionais. Como alternativa, você pode usar a propriedade grid-auto-flow.
+    Essa propriedade recebe row ou column como o primeiro valor, com um segundo valor opcional de dense. grid-auto-flow 
+    usa um algoritmo de posicionamento automático para ajustar o layout de grade. Defini-lo como column dirá ao 
+    algoritmo para criar colunas para o conteúdo conforme necessário. O valor dense permite que o algoritmo reveja seus 
+    passos e preencha os espaços na grade com itens menores, o que pode fazer com que os itens apareçam fora de ordem. 
+    
+    Agora o algoritmo de autoposicionamento será exibido quando você adicionar um novo elemento de ícone. No entanto, o 
+    algoritmo tem auto como padrão para a largura da nova coluna, o que não corresponde às colunas atuais.
+    Você pode substituir isso pela propriedade grid-auto-columns*/
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+    row-gap: 3rem;
+
+    margin-top: 25px;
+}
+
+.social-icons {
+    display: grid;
+    font-size: 3rem;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.semnomes section {
+ /* A propriedade grid-column informa ao item de grade em qual linha de grade começar e terminar. */
+    grid-column: 2 / 3;
+    font-size: 1.8rem;
+    letter-spacing: 0.6px;
+    column-width: 25rem;
+    text-align: justify;
+}
+
+.semnomes h1 {
+    font-size: 50px;
+    color: orangered;
+    margin-right: 1rem;
+}
+
+
+.wheel {
+    margin-top: 150px;
+
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 50px;
+    position: absolute;
+    height: 55vw;
+    width: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+    animation-name: wheel;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .line {
+    background-color: black;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+  }
+  
+  .line:nth-of-type(2) {
+    transform: rotate(60deg);
+  }
+  .line:nth-of-type(3) {
+    transform: rotate(120deg);
+  }
+  .line:nth-of-type(4) {
+    transform: rotate(180deg);
+  }
+  .line:nth-of-type(5) {
+    transform: rotate(240deg);
+  }
+  .line:nth-of-type(6) {
+    transform: rotate(300deg);
+  }
+  
+  .cabin {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    border: 2px solid;
+    transform-origin: 50% 0%;
+    animation: cabins 10s ease-in-out infinite;
+  }
+  
+  .cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+  }
+  .cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+  }
+  .cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+  }
+  .cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+  }
+  .cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+  }
+  .cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+  }
+  
