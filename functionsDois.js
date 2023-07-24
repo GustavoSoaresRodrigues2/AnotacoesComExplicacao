@@ -1,0 +1,1 @@
+/* Parte: Testar objetos por propriedades */
