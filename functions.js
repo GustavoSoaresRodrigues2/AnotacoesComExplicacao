@@ -99,14 +99,14 @@ console.log(testStrictNotEqual(17))
    Ex:  3 !==  3  // false
         3 !== '3' // true
         4 !==  3  // true   */
-function testStrictNotEqual(val) {
+function testStrictNotEqual2(val) {
     if (val !== 17) {
         return "Not Equal (true)"
     }
     return "Equal (false)"
 }
 
-console.log(testStrictNotEqual(12))
+console.log(testStrictNotEqual2(12))
 
 /* O operador maior que (>) compara os valores de dois números. Se o número à esquerda for maior que o número à direita, 
    ele retorna true. Caso contrário, ele retorna false.
