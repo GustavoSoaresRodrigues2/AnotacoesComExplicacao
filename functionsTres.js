@@ -149,7 +149,7 @@ console.log(bicycle.gear)
    constructor não for explicitamente definido, ele será definido implicitamente sem argumentos. */
 class Vegetable {
     constructor(name) {
-        this.name = name;
+        this.name = name
     }
 }
 const carrot = new Vegetable('carrot')
@@ -169,21 +169,21 @@ class Thermostat {
     get temperature() {
         return (5 / 9) * (this._fahrenheit - 32)
     }
-    set temperature (celsius) {
+    set temperature(celsius) {
         this._fahrenheit = (celsius * 9.0) / 5 + 32
     }
 }
-const thermos = new Thermostat(76); // Definição na escala Fahrenheit
-let temp = thermos.temperature; // 24,44 em Celsius
-thermos.temperature = 26;
-temp = thermos.temperature; // 26 em Celsius
+const thermos = new Thermostat(76) // Definição na escala Fahrenheit
+let temp = thermos.temperature // 24,44 em Celsius
+thermos.temperature = 26
+temp = thermos.temperature// 26 em Celsius
 console.log(temp)
 
 /* Para compartilhar funções com esses outros arquivos, você primeiro precisa exportá-las (export). */
 // esta em functionsDois.js / linha 295
 
 /* import te permite escolher quais partes carregar de um arquivo ou módulo. */
-import { convertToInteger, verZero } from "./functionsDois.js";
+import { convertToInteger, verZero } from "./functionsDois.js"
 console.log(convertToInteger(9))
 console.log(verZero(45))
 
@@ -192,4 +192,56 @@ console.log(verZero(45))
    A instrução import acima criará um objeto chamado myMathModule. Esse nome é totalmente arbitrário. Você pode escolher 
    qualquer outro nome que seja apropriado para sua aplicação. O objeto conterá todas as exportações do arquivo */
 // import * as importFunctionsDois from "./functionsDois.js"
+
+/* Há outra sintaxe para export que você precisa saber, conhecida como exportação padrão. Você usará essa sintaxe quando 
+   apenas um valor estiver sendo exportado de um arquivo ou módulo. Essa sintaxe também é usada para exportar um valor 
+   substituto caso o valor original não possa ser exportado. */
+export default function subtract(x, y) {
+    return x - y
+}
+
+/* Para importar uma exportação padrão, você precisa usar uma sintaxe diferente de import. */
+// import subtract from "./math_functions.js";
+
+/* A sintaxe é diferente em apenas um ponto. O valor importado, subtract, não está rodeado por chaves ({}). Aqui, 
+   subtract é simplesmente uma palavra qualquer que vai ser usada para identificar a variável sendo exportada do arquivo. 
+   Você pode usar qualquer nome ao importar algo que foi exportado como padrão. */
+
+// 
+
+/* Uma promessa em JavaScript é exatamente o que parece - você faz a promessa de que vai fazer uma tarefa, geralmente de 
+   forma assíncrona. Quando a tarefa é finalizada, ou você cumpriu a promessa ou falhou ao tentar. Por ser uma função 
+   construtora, você precisa utilizar a palavra-chave new para criar uma Promise. Ela recebe uma função, como seu 
+   argumento, com dois parâmetros - resolve e reject. Esses métodos são usados para determinar o resultado da 
+   promessa. */
+// const makeServerRequest = new Promise((resolve, reject) => { })
+
+/* Uma promessa possui três estados: pendente (pending), cumprida (fulfilled) e rejeitada (rejected).
+   A promessa que você criou acima está presa no estado pending para sempre porque você não adicionou 
+   uma forma de concluir a promessa.
+   Os parâmetros resolve e reject passados para o argumento da promessa servem para este propósito. resolve é utilizado 
+   quando a promessa for bem-sucedida, enquanto reject é utilizado quando ela falhar. Ambos são métodos que recebem 
+   apenas um argumento */
+const makeServerRequest = new Promise((resolve, reject) => {
+    let responseFromServer
+    if (responseFromServer) {
+        resolve("We got the data") // Altere esta linha
+    } else {
+        reject("Data not received")// Altere esta linha
+    }
+})
+
+/* Promessas são úteis quando você tem um processo que leva uma quantidade de tempo desconhecido para ser finalizado 
+   (ou seja, algo assíncrono). Muitas vezes, uma requisição a um servidor. Fazer uma requisição a um servidor leva 
+   tempo, e após a requisição ser finalizada, você geralmente quer fazer algo com a resposta retornada. Isso pode ser 
+   feito usando o método then. O método then é executado imediatamente após a promessa ser cumprida com resolve. */
+makeServerRequest.then(result => {
+    console.log(result)
+})
+
+/* catch é o método usado quando a promessa é rejeitada. Ele é executado imediatamente após o método reject da promessa 
+   ser chamado.  */
+makeServerRequest.catch(error => {
+    console.log(error)
+})
 
