@@ -284,3 +284,57 @@ const teste25 = () => {
 }
 console.log(teste25())
 
+/* Lookaheads ("olhar à frente") são padrões que dizem ao JavaScript para procurar outros padrões ao longo da string sem 
+   capturá-los. Eles podem ser úteis quando é necessário fazer diversas verificações na mesma string.
+   Existem dois tipos de lookahead: o lookahead positivo e o lookahead negativo.
+   Lookaheads positivos garantem que o padrão especificado se encontra à frente, mas não o capturam. Usa-se (?=...), 
+   onde ... é o padrão a ser procurado, para escrever lookaheads positivos.
+   Lookaheads negativos, por outro lado, garantem que o padrão especificado não se encontra à sua frente na string. Para 
+   usar lookaheads negativos, escrevemos (?!...) onde ... é o padrão que você quer ter certeza que não está lá. O 
+   restante do padrão é validado se o padrão do lookahead negativo estiver ausente. */
+// uma senhas de mais de 5 caracteres e que tenham dois algarismos consecutivos.
+const teste26 = () => {
+    let str = "astronauta";
+    let regex = /(?=\w{6})(?=\w*\d{2})/;
+    let result = regex.test(str);
+}
+
+/* Vamos supor que você deseja encontrar a correspondência de uma palavra que ocorra várias vezes. 
+   Grupos de captura podem ser usados para localizar substrings repetidas.
+   Os grupos de captura são criados envolvendo o padrão de regex a ser capturado entre parênteses. Neste caso, o 
+   objetivo é capturar uma palavra composta de caracteres alfanuméricos para que o grupo de captura seja \w+ entre 
+   parênteses: /(\w+)/.
+   A substring correspondente ao grupo é salva em uma "variável" temporária que pode ser acessada dentro da mesma 
+   expressão regular usando uma barra invertida e o número do grupo de captura (ex.: \1). Os grupos de captura são 
+   automaticamente numerados pela posição de abertura de seus parênteses (esquerda para direita), começando em 1. */
+const teste27 = () => {
+    let str = "42 42 42"
+    let regex = /^(\d+) \1 \1$/
+    let result = regex.test(str)
+    return result
+}
+console.log(teste27())
+
+/* Buscar texto é útil. É ainda mais útil quando você consegue modificar (ou substituir) o texto que você busca.
+   Você pode buscar e substituir texto em uma string usando o método .replace(). O primeiro parâmetro do .replace() é o 
+   padrão regex que você quer procurar. O segundo parâmetro é a string que substituirá o resultado da busca ou uma 
+   função que fará algo com ele. */
+const teste28 = () => {
+    let str = "correndo com o carro na pista"
+    let regex = /o carro/
+    let result = str.replace(regex, "a moto")
+    return result
+}
+console.log(teste28())
+
+/* Às vezes, strings têm espaços em branco indesejados em seus inícios e fins. Uma operação muito comum de strings é 
+   remover esses espaços ao redor delas. 
+   Escreva uma regex que, junto dos métodos apropriados de string, remove os espaços em branco do começo e do fim 
+   delas. */
+const teste29 = () => {
+    let str = " Olha Mundo! "
+    let regex = /^\s+|\s+$/g
+    let result = str.replace(regex, "")
+    return result
+}
+console.log(teste29())
