@@ -6,24 +6,88 @@
 /* As variáveis são frequentemente declaradas no seletor :root. Esse é o seletor de nível mais alto no CSS; colocar 
    as variáveis lá as tornará utilizáveis em todos os lugares. */
 :root {
-    --Tipo-Cor: #aa80ff;
+    --background-color: #140088
 }
 
 * {
     /* Normaliza o modelo de caixa */
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
     padding: 0;
+
+    z-index: 0;
 }
+
+.back_titulo{
+    position: absolute;
+    z-index: -1;
+
+    top: 85px;
+    left: 23%;
+
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+    font-weight: bold;
+
+    color: #2730af;
+}
+
+.back_sol {
+    background: radial-gradient(
+        circle closest-corner at 85% 35%,
+        #ffcf33,
+        #ffcf33 20%,
+        #ffff66 21%,
+        #bbeeff 100%
+    );
+
+    width: 100%;
+    height: 500px;
+
+    position: absolute;
+    z-index: -1;
+
+    right: 0;
+}
+
+.back_nuvem {
+    width: 300px;
+    height: 150px;
+
+    position: absolute;
+    z-index: -1;    
+}
+
+.back_nuvem:nth-of-type(1) {
+    top: 150px;
+    left: 100px;
+
+    opacity: 0.7;
+}
+
+.back_nuvem:nth-of-type(2) {
+    top: 250px;
+    left: 500px;
+
+    opacity: 0.5;
+}
+
+.container {
+    position: absolute;
+    top: 510px;
+}
+
+
+
+
+
 
 .sdf {
     /* Coloar uma imagem de fundo usando => url() */
     background: url(sim.jpg);
 
-    color: white;
+    color: #140088;
 
     /* Evita distanciamento em excesso. */
     max-width: 1000px;
@@ -265,15 +329,7 @@ span:nth-of-type(6) {
     background-color: #46467a;
 }
 
-.bola {
-    background: radial-gradient(
-        circle closest-corner at 80% 8%,
-        #ffcf33,
-        #ffcf33 20%,
-        #ffff66 21%,
-        #bbeeff 100%
-    );
-}
+
 
 .semnomes {
 
