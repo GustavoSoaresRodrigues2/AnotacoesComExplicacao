@@ -371,7 +371,7 @@ console.log(checkPositive([1, 2, 3, -4, 5]))
 
 // O método some funciona verificando se pelo menos um dos elementos de um array passam em um teste. Ele retorna um 
 // booleano: true se pelo menos um valor atende ao critério e false caso contrário. 
-function checkPositive(arr) {
+function checkPositive2(arr) {
     return arr.some(elem => elem > 0)
 }
-checkPositive([1, 2, 3, -4, 5])
+console.log(checkPositive2([1, 2, 3, -4, 5]))

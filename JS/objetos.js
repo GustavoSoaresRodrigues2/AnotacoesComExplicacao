@@ -89,7 +89,7 @@ function checarProp(object, prope) {
         return "Não Encontrado"
     }
 }
-console.log(checarProp())
+console.log(checarProp(primNome, Eu))
 
 // Às vezes, você pode querer armazenar dados em uma Estrutura de Dados flexível. Um objeto JavaScript é uma forma de 
 // lidar com dados flexíveis. Eles permitem combinações arbitrárias de strings, numbers, booleans, arrays, functions e 
